@@ -393,13 +393,6 @@ export function ChatSidebar() {
                                     <Key className="mr-2 h-4 w-4 hover:text-sidebar-accent" />
                                     API Keys
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onSelect={(e) => {
-                                    e.preventDefault();
-                                    window.open("https://git.new/s-mcp", "_blank");
-                                }}>
-                                    <Github className="mr-2 h-4 w-4 hover:text-sidebar-accent" />
-                                    GitHub
-                                </DropdownMenuItem>
                                 <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                                     <div className="flex items-center justify-between w-full">
                                         <div className="flex items-center">

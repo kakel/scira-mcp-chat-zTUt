@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useLocalStorage } from "@/lib/hooks/use-local-storage";
 import { STORAGE_KEYS } from "@/lib/constants";
 import { MCPProvider } from "@/lib/context/mcp-context";
+import { MigrationProvider } from "@/components/migration-provider";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -36,7 +37,9 @@ export function Providers({ children }: { children: ReactNode }) {
       >
         <MCPProvider>
           <SidebarProvider defaultOpen={sidebarOpen} open={sidebarOpen} onOpenChange={setSidebarOpen}>
-            {children}
+            <MigrationProvider>
+              {children}
+            </MigrationProvider>
             <Toaster position="top-center" richColors />
           </SidebarProvider>
         </MCPProvider>
